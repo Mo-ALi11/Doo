@@ -44,7 +44,6 @@ todoList.addEventListener('click', (e) => {
     e.target.parentElement.classList.contains('remove-task')
     ) {
         const taskId = e.target.closest('li').id
-        console.log('clicked')
         removeTask(taskId)
     }
 })
@@ -93,7 +92,6 @@ function countTasks() {
 
 function removeTask(taskId) {
     tasks = tasks.filter((task)=> task.id !== parseInt(taskId))
-    console.log(tasks)
     localStorage.setItem('tasks', JSON.stringify(tasks))
 
     document.getElementById(taskId).remove()
